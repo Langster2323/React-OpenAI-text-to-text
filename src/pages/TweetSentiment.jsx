@@ -1,13 +1,7 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TweetSentiment from "./pages/TweetSentiment";
-import Home from "./pages/Home";
-import NavBar from "./components/organisms/NavBar/NavBar";
+import NavBar from "../components/organisms/NavBar/NavBar";
 
-function App() {
+export default function TweetSentiment() {
   const [tweet, setTweet] = useState("");
   const [sentiment, setSentiment] = useState(""); // positive, negative, neutral
   const callOpenAIAPI = async () => {
@@ -49,14 +43,22 @@ function App() {
   };
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tweet-sentiment" element={<TweetSentiment />} />
-        </Routes>
-      </BrowserRouter>
+      <NavBar />
+      <h1>Get The Tweet Sentiment From OpenAI API</h1>
+      <p>
+        You will be provided with a tweet, and your task is to classify its
+        sentiment as with a value between 0 and 10 (to being its very positive).
+      </p>
+      <textarea
+        onChange={(e) => setTweet(e.target.value)}
+        placeholder="Paste your tweet here!"
+        cols={50}
+        rows={10}
+      />
+      <button onClick={callOpenAIAPI}>
+        Get The Tweet Sentiment From OpenAI API
+      </button>
+      {sentiment && <h3>This Tweet Is: {sentiment}</h3>}
     </div>
   );
 }
-
-export default App;

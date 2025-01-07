@@ -17,7 +17,7 @@ function App() {
       "messages": [
         {
           "role": "system",
-          "content": "You will be provided with a tweet, and your task is to classify its sentiment as positive, neutral, or negative."
+          "content": "You will be provided with a tweet, and your task is to classify its sentiment as with a value between 0 and 10 (to being its very positive)."
         },
         {
           "role": "user",

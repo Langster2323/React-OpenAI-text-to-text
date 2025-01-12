@@ -58,7 +58,7 @@ export default function TweetSentiment() {
       <button onClick={callOpenAIAPI}>
         Get The Tweet Sentiment From OpenAI API
       </button>
-      {sentiment && <h3>This Tweet Is: {sentiment}</h3>}
+      {sentiment && <h3>{sentiment}</h3>}
     </div>
   );
 }

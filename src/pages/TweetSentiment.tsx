@@ -35,7 +35,6 @@ export default function TweetSentiment() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setSentiment(data.choices[0].message.content);
       })
       .catch((error) => {

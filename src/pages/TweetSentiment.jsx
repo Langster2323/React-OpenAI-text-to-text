@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NavBar from "../components/organisms/NavBar/NavBar";
 
 export default function TweetSentiment() {
   const [tweet, setTweet] = useState("");
@@ -43,7 +42,6 @@ export default function TweetSentiment() {
   };
   return (
     <div>
-      <NavBar />
       <h1>Get The Tweet Sentiment From OpenAI API</h1>
       <p>
         You will be provided with a tweet, and your task is to classify its

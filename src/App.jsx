@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TweetSentiment from "./pages/TweetSentiment";
 import Home from "./pages/Home";
 import NavBar from "./components/organisms/NavBar/NavBar";
+import { Layout } from "./components/molecules/Layout";
 
 function App() {
   const [tweet, setTweet] = useState("");
@@ -50,10 +51,12 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Routes>
+      <Layout>
+      <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tweet-sentiment" element={<TweetSentiment />} />
         </Routes>
+      </Layout>
       </BrowserRouter>
     </div>
   );

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { APIBody } from "../helper/types";
+import React from "react";
 
 export default function TweetSentiment() {
-  const [tweet, setTweet] = useState("");
-  const [sentiment, setSentiment] = useState(""); // positive, negative, neutral
+  const [tweet, setTweet] = useState<string>("");
+  const [sentiment, setSentiment] = useState<string>(""); // positive, negative, neutral
   const callOpenAIAPI = async () => {
-    const APIBody = {
+    const APIBody: APIBody = {
       model: "gpt-3.5-turbo",
       max_tokens: 60,
       temperature: 0,
